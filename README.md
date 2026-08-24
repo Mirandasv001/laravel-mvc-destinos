@@ -1,59 +1,33 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Catálogo Turístico de El Salvador — Implementación del Patrón MVC en Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplicación web desarrollada en Laravel que demuestra la implementación del patrón arquitectónico Modelo-Vista-Controlador (MVC), el ciclo de vida de una petición HTTP y la manipulación de fuentes de datos estructuradas en formato JSON.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Ciclo de Vida de una Petición y Flujo MVC
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+El flujo de información en la aplicación se estructura de la siguiente manera:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. **Petición HTTP:** El usuario solicita una ruta (`GET /` para el catálogo, `GET /destinos/{id}` para el detalle, o `POST /destinos/{id}/contacto` para enviar mensajes).
+2. **Enrutador (`routes/web.php`):** Mapea la URI y transfiere la ejecución al método correspondiente de `DestinationController`.
+3. **Controlador (`DestinationController`):** Orquesta la lógica:
+   - Solicita datos al Modelo `Destination`.
+   - Ejecuta validaciones de formularios mediante `$request->validate()`.
+   - Retorna la vista correspondiente inyectando los datos requeridos.
+4. **Modelo (`Destination`):** Encapsula el acceso y lectura del archivo `database/data/destinos.json` usando `File::get()` y `json_decode()`, exponiendo métodos estáticos (`all()`, `find()`).
+5. **Vista (`Blade`):** Renderiza la interfaz utilizando plantillas Blade modulares (`layouts/app.blade.php`, `index.blade.php`, `show.blade.php`) e interactúa con assets locales.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🚀 Requisitos e Instalación
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Requisitos
+- PHP >= 8.2
+- Composer
+- Git
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Pasos de ejecución
+1. **Clonar repositorio:**
+   ```bash
+   git clone [https://github.com/Mirandasv001/laravel-mvc-destinos.git](https://github.com/Mirandasv001/laravel-mvc-destinos.git)
+   cd laravel-mvc-destinos
