@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "titulo": "Parque Nacional El Boquerón",
+    "departamento": "San Salvador",
+    "categoria": "Ecoturismo / Volcanes",
+    "precio_entrada": "$1.00 nacionales / $2.00 extranjeros",
+    "descripcion": "Cráter volcánico ubicado en la cima del volcán de San Salvador con clima fresco, senderos y miradores.",
+    "imagen": "images/destinos/boqueron.jpg",
+    "horario": "Lunes a Domingo, 8:00 AM - 5:00 PM"
+  },
+  {
+    "id": 2,
+    "titulo": "Playa El Tunco",
+    "departamento": "La Libertad",
+    "categoria": "Playa y Surf",
+    "precio_entrada": "Acceso libre (costo de parqueo ~$2.00 - $3.00)",
+    "descripcion": "Destino icónico para surfistas internacionales, con vida nocturna activa, restaurantes frente al mar y atardeceres memorables.",
+    "imagen": "images/destinos/tunco.jpg",
+    "horario": "Abierto 24/7"
+  },
+  {
+    "id": 3,
+    "titulo": "Ruta de las Flores (Juayúa)",
+    "departamento": "Sonsonate",
+    "categoria": "Pueblos Vivos / Gastronomía",
+    "precio_entrada": "Acceso libre",
+    "descripcion": "Pueblo colonial famoso por su festival gastronómico de fin de semana, la cascada Los Chorros de la Calera y paseos en cuatrimoto.",
+    "imagen": "images/destinos/juayua.jpg",
+    "horario": "Fines de semana principal actividad comercial"
+  },
+  {
+    "id": 4,
+    "titulo": "Lago de Coatepeque",
+    "departamento": "Santa Ana",
+    "categoria": "Lagos y Aventura",
+    "precio_entrada": "Acceso libre a miradores públicos",
+    "descripcion": "Lago de origen volcánico rodeado de cerros, ideal para deportes acuáticos, paseos en lancha y vistas panorámicas.",
+    "imagen": "images/destinos/coatepeque.jpg",
+    "horario": "Abierto todo el año"
+  }
+]
